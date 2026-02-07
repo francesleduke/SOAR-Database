@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Test</title>
+    <meta charset="UTF-8">
+    <title>Undergraduate Research Opportunities</title>
 </head>
 <body>
-    <h1>HELLO TEMPLATE!</h1>
-    <p>If you see this, the template is loading.</p>
+    <h1>Opportunities</h1>
+
+    {% if opportunities %}
+        <ul>
+        {% for opp in opportunities %}
+            <li>
+                <strong>{{ opp.title }}</strong> 
+                ({{ opp.opportunity_type }} in {{ opp.field }})<br>
+                {{ opp.institution }} — {{ opp.location }}<br>
+                <a href="{{ opp.link }}" target="_blank">More info</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No opportunities yet.</p>
+    {% endif %}
 </body>
 </html>
