@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Undergraduate Research Opportunities</title>
+    <title>Research Opportunities</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .opp { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .opp h2 { margin: 0; font-size: 1.4em; }
+        .opp .meta { font-size: 0.9em; color: #555; }
+        .opp .description { margin-top: 10px; }
+        .opp a { color: #007BFF; text-decoration: none; }
+    </style>
 </head>
 <body>
-    <h1>Opportunities</h1>
-
-    {% if opportunities %}
-        <ul>
-        {% for opp in opportunities %}
-            <li>
-                <strong>{{ opp.title }}</strong> 
-                ({{ opp.opportunity_type }} in {{ opp.field }})<br>
-                {{ opp.institution }} — {{ opp.location }}<br>
-                <a href="{{ opp.link }}" target="_blank">More info</a>
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No opportunities yet.</p>
-    {% endif %}
+    <h1>Available Opportunities</h1>
+    {% for opp in opportunities %}
+    <div class="opp">
+        <h2>{{ opp.title }}</h2>
+        <div class="meta">
+            {{ opp.opportunity_type }} • {{ opp.field }} • {{ opp.institution }} • {{ opp.location }}
+            {% if opp.paid %} • Paid {% endif %}
+        </div>
+        <div class="description">
+            {{ opp.description }}
+        </div>
+        <div>
+            <a href="{{ opp.link }}" target="_blank">More info / Application</a>
+        </div>
+    </div>
+    {% endfor %}
 </body>
 </html>
