@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+
 <h1>
     {% if opp_type %}
         {{ opp_type|capitalize }} Opportunities
@@ -18,18 +19,36 @@
 </h1>
 
 {% if opportunities %}
-    <ul>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+
         {% for opp in opportunities %}
-            <li>
-                <strong>{{ opp.title }}</strong>
-                ({{ opp.opportunity_type }} in {{ opp.field }})<br>
-                {% if opp.institution %}{{ opp.institution }}{% endif %}
-                {% if opp.location %} — {{ opp.location }}{% endif %}<br>
-                <a href="{{ opp.link }}" target="_blank">More info</a>
-            </li>
+            <div style="background: white; padding: 1.5rem; border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+                <h3 style="margin-top: 0;">{{ opp.title }}</h3>
+
+                <p style="font-size: 0.9rem; color: #555;">
+                    {{ opp.opportunity_type }} • {{ opp.field }}
+                </p>
+
+                {% if opp.institution %}
+                    <p><strong>{{ opp.institution }}</strong></p>
+                {% endif %}
+
+                {% if opp.location %}
+                    <p>{{ opp.location }}</p>
+                {% endif %}
+
+                <a href="{{ opp.link }}" target="_blank"
+                   style="display: inline-block; margin-top: 1rem; color: #007BFF;">
+                    View opportunity →
+                </a>
+            </div>
         {% endfor %}
-    </ul>
+
+    </div>
 {% else %}
     <p>No opportunities yet.</p>
 {% endif %}
+
 {% endblock %}

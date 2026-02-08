@@ -1,15 +1,43 @@
 {% extends "base.html" %}
 
-{% block title %}SOAR – Student Opportunities{% endblock %}
+{% block title %}SOAR Career Lab{% endblock %}
 
 {% block content %}
-<h1>Welcome to the SOAR Student Opportunities Database</h1>
 
-<p>
-    Centralized undergraduate research, internships, and job opportunities for students.
-</p>
+<header style="margin-bottom: 3rem;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+        SOAR (Student Opportunities and Accessible Research) Database
+    </h1>
 
-<p>
-    Use the navigation above to explore opportunities by type.
-</p>
+    <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+        The SOAR Database is a resources created for students at College of the Atlantic to access research opportunities,
+        jobs, internships, and career community guides. 
+    </p>
+</header>
+
+<section style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+
+    <a href="/opportunities/internship"
+       style="width: 250px; padding: 2rem; background: white; border-radius: 10px;
+              text-decoration: none; color: #2c3e50; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h2>Opportunities</h2>
+        <p>Explore internships, jobs, and research opportunities.</p>
+    </a>
+
+    <a href="#"
+       style="width: 250px; padding: 2rem; background: white; border-radius: 10px;
+              text-decoration: none; color: #2c3e50; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h2>Internship Archive</h2>
+        <p>Browse past internships, reports, and reflections.</p>
+    </a>
+
+    <a href="#"
+       style="width: 250px; padding: 2rem; background: white; border-radius: 10px;
+              text-decoration: none; color: #2c3e50; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h2>Career Guides</h2>
+        <p>Student-written guides and community career resources.</p>
+    </a>
+
+</section>
+
 {% endblock %}
