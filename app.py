@@ -110,15 +110,26 @@ def root():
 def landing():
     return render_template("landing.html")
 
-@app.route("/opportunities/<opp_type>") # dynamic route that takes in the type of opportunity
+@app.route("/opportunities/<opp_type>")
 def opportunities_by_type(opp_type):
-    # make sure type is valid
-    if opp_type not in ["internship", "job", "research"]:
-        return "Invalid opportunity type", 404
-    
-    opportunities = Opportunity.query.filter_by(opportunity_type=opp_type).order_by(Opportunity.created_at.desc()).all()
-    return render_template("home.html", opportunities=opportunities, opp_type=opp_type)
+    valid_types = {
+        "internship": "Internship",
+        "job": "Job",
+        "research": "Research"
+    }
 
+    if opp_type not in valid_types:
+        return "Invalid opportunity type", 404
+
+    opportunities = Opportunity.query.filter_by(
+        opportunity_type=valid_types[opp_type]
+    ).order_by(Opportunity.created_at.desc()).all()
+
+    return render_template(
+        "home.html",
+        opportunities=opportunities,
+        opp_type=opp_type
+    )
 
 
 if __name__ == "__main__": # ensures the code only runs when you start python app.py (in Terminal) and not when you import the file into another Python script 
