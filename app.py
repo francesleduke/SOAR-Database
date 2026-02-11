@@ -41,6 +41,11 @@ def guides():
     # Placeholder for career community guides page
     return render_template("guides.html")
 
+@app.route("/landing")
+def landing():
+    return render_template("landing.html")
+
+
 # ----------------------
 # Run app
 # ----------------------
