@@ -1,0 +1,5 @@
+title,opportunity_type,field,institution,description,link,paid,location,start_term,deadline
+Summer Research Internship,Internship,Biology,State University,"10-week research internship in molecular biology",https://example.com/biology-internship,True,Denver, CO,Summer 2026,2026-04-15
+Data Science Job,Job,Computer Science,TechCorp,"Entry-level data analyst position focusing on Python and SQL",https://example.com/data-job,True,Remote,Immediate,2026-03-01
+Marine Biology Research,Research,Environmental Science,Oceanic Institute,"Assist with field research on coastal ecosystems",https://example.com/marine-research,False,Bar Harbor, ME,Fall 2026,2026-08-31
+
