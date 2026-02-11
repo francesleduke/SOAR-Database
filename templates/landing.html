@@ -4,28 +4,158 @@
     <meta charset="UTF-8">
     <title>SOAR - Student Opportunities</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; text-align: center; }
-        h1 { font-size: 2.5em; margin-bottom: 20px; }
-        p { font-size: 1.2em; margin-bottom: 40px; }
-        .btn {
-            display: inline-block;
-            padding: 20px 40px;
-            margin: 15px;
-            background-color: #007BFF;
+        /* Reset some defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
             color: white;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.1em;
+            font-weight: bold;
         }
-        .btn:hover { background-color: #0056b3; }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo + Title */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            justify-content: center;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+       header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Main section with cards */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem auto;
+            max-width: 1000px;
+            gap: 2rem;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+            flex: 1 1 250px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Separators */
+        hr.section-divider {
+            border: 0;
+            height: 2px;
+            background: #bdc3c7;
+            margin: 4rem 0;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            background-color: #ecf0f1;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to SOAR</h1>
-    <p>Centralized undergraduate research, internship, and job opportunities for students.</p>
 
-    <a href="/opportunities" class="btn">Explore Opportunities</a>
-    <a href="/internships/map" class="btn">Internships Map</a>
-    <a href="/guides" class="btn">Career Community Guides</a>
+    <!-- Navbar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/opportunities">Opportunities</a>
+        <a href="/internships/map">Internship Map</a>
+        <a href="/career-guides">Career Guides</a>
+    </nav>
+
+    <!-- Header with logo -->
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="SOAR Logo">
+        <h1>SOAR Database</h1>
+        <p>Centralized undergraduate research, internships, and career resources for students</p>
+    </header>
+
+    <!-- Main cards -->
+    <main>
+        <a href="/opportunities" class="section-card">
+            <h2>Explore Opportunities</h2>
+            <p>View current internships, jobs, and research opportunities curated for students.</p>
+        </a>
+
+        <a href="/internships/map" class="section-card">
+            <h2>Internship Archive</h2>
+            <p>Check past internships, program locations, and insights to plan your next steps.</p>
+        </a>
+
+        <a href="/career-guides" class="section-card">
+            <h2>Career Community Guides</h2>
+            <p>Explore resources and guides to help navigate your career path and professional growth.</p>
+        </a>
+    </main>
+
+    <hr class="section-divider">
+
+    <footer>
+        &copy; 2026 SOAR Database | Frances LeDuke
+    </footer>
+
 </body>
 </html>
