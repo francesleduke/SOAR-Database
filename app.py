@@ -7,6 +7,7 @@ app = Flask(__name__, template_folder="templates")
 app.config['TEMPLATES_AUTO_RELOAD'] = True  # auto reload templates
 
 GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQRB7nVD_m8mvJtWIVVRSz_BTePnq57xT6NcJxtDGsTYo-Rv_iFRhRr7WAUrxsaeEZp5_czOXxvXUd1/pub?output=csv"
+EVENTS_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQy57qnx2UuJkcKJ50h5E3sZKBCEc0n5CQNvRwFRp6wIAY9XskwAcXfE-VFVvG9kZpVRu09raHeWXn/pub?output=csv"
 
 # ----------------------
 # Helper function to read opportunities
@@ -22,7 +23,23 @@ def read_opportunities(opp_type=None):
 # ----------------------
 @app.route("/")
 def root():
-    return render_template("landing.html")
+    try:
+        df = pd.read_csv(EVENTS_SHEET_URL)
+
+        # Convert expiration column to datetime
+        df['expiration_date'] = pd.to_datetime(df['expiration_date'], errors='coerce')
+
+        today = datetime.today()
+
+        # Keep only non-expired events
+        df = df[df['expiration_date'] >= today]
+
+        events = df.to_dict(orient="records")
+
+    except:
+        events = []
+
+    return render_template("landing.html", events=events)
 
 @app.route("/opportunities")
 @app.route("/opportunities/<opp_type>")
