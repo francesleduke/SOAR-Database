@@ -135,23 +135,48 @@
 
     <!-- Main cards -->
     <main>
-        <a href="/opportunities" class="section-card">
-            <h2>Explore Opportunities</h2>
-            <p>View current internships, jobs, and research opportunities curated for students.</p>
-        </a>
+    <a href="/opportunities" class="section-card">
+        <h2>Explore Opportunities</h2>
+        <p>View current internships, jobs, and research opportunities curated for students.</p>
+    </a>
 
-        <a href="/internships/map" class="section-card">
-            <h2>Internship Archive</h2>
-            <p>Check past internships, program locations, and insights to plan your next steps.</p>
-        </a>
+    <a href="/career-guides" class="section-card">
+        <h2>Resources and Exploration</h2>
+        <p>Explore guides, career communities, and tools to navigate your professional path.</p>
+    </a>
 
-        <a href="/career-guides" class="section-card">
-            <h2>Career Community Guides</h2>
-            <p>Explore resources and guides to help navigate your career path and professional growth.</p>
-        </a>
+    <a href="/internships/map" class="section-card">
+        <h2>Internship Archive</h2>
+        <p>Check past internships, program locations, and insights to plan your next steps.</p>
+    </a>
     </main>
 
     <hr class="section-divider">
+
+    <section style="max-width: 1000px; margin: 0 auto 4rem auto; padding: 0 2rem;">
+        <h2 style="margin-bottom: 2rem;">Upcoming Events</h2>
+
+        {% for event in events %}
+        <div style="
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        ">
+            <h3 style="margin-bottom: 0.5rem;">{{ event.event_title }}</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Date:</strong> {{ event.event_date }}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> {{ event.location }}</p>
+            <p style="margin-bottom: 1rem;">{{ event.description }}</p>
+
+            {% if event.link %}
+            <a href="{{ event.link }}" target="_blank" style="color: #2c3e50; font-weight: bold;">
+                Learn More →
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </section>
 
     <footer>
         &copy; 2026 SOAR Database | Frances LeDuke
