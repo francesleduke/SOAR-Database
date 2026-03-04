@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>{% block title %}SOAR{% endblock %}</title>
 
@@ -12,10 +13,15 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f7fa;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(180deg, #f5f7fa 0%, #e9edf3 100%);
             color: #2c3e50;
         }
+
+        /* Logo, titles, nav links */
+header h1, .nav-left a, .section-card h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
 
         /* NAVBAR */
         .navbar {
@@ -27,9 +33,12 @@
             justify-content: space-between;
         }
 
-        .nav-left a {
+        .nav-left {
             font-size: 1.6rem;
             font-weight: bold;
+        }
+
+        .nav-left a {
             color: white;
             text-decoration: none;
         }
@@ -40,6 +49,7 @@
             gap: 2rem;
         }
 
+        /* Dropdown */
         .dropdown {
             position: relative;
         }
@@ -70,6 +80,7 @@
             padding: 12px 16px;
             text-decoration: none;
             color: #2c3e50;
+            font-weight: normal;
         }
 
         .dropdown-content a:hover {
@@ -83,52 +94,121 @@
         }
 
         .external-link {
-            color: white;
-            text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-weight: 500; /* same as dropdown links */
+    transition: opacity 0.2s;
+}
+
+.external-link:hover {
+    opacity: 0.8;
+}
+        /* Logo + Title */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            justify-content: center;
         }
 
-        .external-link:hover {
-            opacity: 0.8;
+        header img {
+            height: 60px;
         }
 
+       header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Main section with cards */
         main {
-            max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem auto;
+            max-width: 1000px;
+            gap: 2rem;
         }
 
+        .section-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+            flex: 1 1 250px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Separators */
+        hr.section-divider {
+            border: 0;
+            height: 2px;
+            background: #bdc3c7;
+            margin: 4rem 0;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
             color: #7f8c8d;
             background-color: #ecf0f1;
-            margin-top: 4rem;
         }
     </style>
 </head>
-
 <body>
 
-<nav class="navbar">
+    <!-- Navbar -->
+ <nav class="navbar">
 
+    <!-- LEFT SIDE -->
     <div class="nav-left">
         <a href="/">SOAR</a>
     </div>
 
+    <!-- RIGHT SIDE -->
     <div class="nav-right">
 
+        <!-- Opportunities -->
         <div class="dropdown">
             <a href="#">Opportunities</a>
             <div class="dropdown-content">
                 <a href="/opportunities/landing">Find Opportunities</a>
                 <a href="/opportunities/research">Research</a>
-                <a href="/opportunities/jobs">Jobs</a>
-                <a href="/opportunities/internships">Internships</a>
+                <a href="/opportunities/job">Jobs</a>
+                <a href="/opportunities/internship">Internships</a>
                 <a href="/opportunities/off-campus">Off Campus Study</a>
             </div>
         </div>
 
+        <!-- Resources & Exploration -->
         <div class="dropdown">
             <a href="#">Resources & Exploration</a>
             <div class="dropdown-content">
@@ -137,6 +217,7 @@
             </div>
         </div>
 
+        <!-- Internship Archive -->
         <div class="dropdown">
             <a href="#">Internship Archive</a>
             <div class="dropdown-content">
@@ -146,14 +227,14 @@
             </div>
         </div>
 
-        <a class="external-link"
-           href="https://www.coa.edu/academics/internships/"
-           target="_blank">
+        <!-- Career Development External -->
+        <a class="external-link" href="https://www.coa.edu/academics/internships/" target="_blank">
             Career Development
         </a>
 
     </div>
 </nav>
+
 
 <main>
     {% block content %}{% endblock %}
