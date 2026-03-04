@@ -50,11 +50,10 @@ def opportunities(opp_type=None):
     opportunities_list = read_opportunities(opp_type)
     return render_template("home.html", opportunities=opportunities_list, opp_type=opp_type)
 
-
+@app.route("/internships")
 @app.route("/internships/landing")
 def internship_landing():
     return render_template("internship_landing.html")
-
 @app.route("/internships/map")
 def internship_map():
     # Only show internships from the sheet
