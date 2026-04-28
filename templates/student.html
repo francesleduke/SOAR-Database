@@ -13,71 +13,80 @@
     </p>
 </section>
 
-<!-- FEATURED PROJECTS -->
+<!-- FEATURED PROJECTS (VISUAL SHOWCASE) -->
 <section class="featured-projects">
-
     <h2>Featured Projects</h2>
 
     <div class="featured-grid">
 
         <div class="featured-project">
             <img src="{{ url_for('static', filename='project1.jpg') }}">
-            <h3>Coastal Ecosystem Change</h3>
-            <p>Examining the impact of climate change on intertidal biodiversity.</p>
-            <a href="#">View Project →</a>
+
+            <div class="overlay">
+                <h3>Coastal Ecosystem Change</h3>
+                <p>Climate change and intertidal biodiversity.</p>
+                <span>View Project →</span>
+            </div>
         </div>
 
         <div class="featured-project">
             <img src="{{ url_for('static', filename='project2.jpg') }}">
-            <h3>AI in Environmental Data</h3>
-            <p>Using machine learning to analyze ecological datasets.</p>
-            <a href="#">View Project →</a>
+
+            <div class="overlay">
+                <h3>AI in Environmental Data</h3>
+                <p>Machine learning for ecological analysis.</p>
+                <span>View Project →</span>
+            </div>
         </div>
 
         <div class="featured-project">
             <img src="{{ url_for('static', filename='project3.jpg') }}">
-            <h3>Community Health Access</h3>
-            <p>Research on rural healthcare accessibility and outcomes.</p>
-            <a href="#">View Project →</a>
+
+            <div class="overlay">
+                <h3>Community Health Access</h3>
+                <p>Research on rural healthcare systems.</p>
+                <span>View Project →</span>
+            </div>
         </div>
 
     </div>
-
 </section>
 
 <!-- FULL SHOWCASE -->
 <section class="research-showcase">
-
     <h2>Research Showcase</h2>
 
     <div class="showcase-grid">
 
-        <!-- VIDEO PROJECT -->
+        <!-- VIDEO -->
         <div class="showcase-card">
             <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-            <h3>Student Presentation</h3>
-            <p>Final presentation on marine conservation strategies.</p>
+            <div class="showcase-content">
+                <h3>Student Presentation</h3>
+                <p>Final presentation on marine conservation strategies.</p>
+            </div>
         </div>
 
         <!-- PAPER -->
         <div class="showcase-card">
-            <div class="paper-preview">
-                <span>📄</span>
+            <div class="paper-preview">📄</div>
+            <div class="showcase-content">
+                <h3>Research Paper</h3>
+                <p>Analysis of environmental policy frameworks.</p>
+                <a href="#">Read Paper →</a>
             </div>
-            <h3>Research Paper</h3>
-            <p>Analysis of environmental policy frameworks.</p>
-            <a href="#">Read Paper →</a>
         </div>
 
         <!-- POSTER -->
         <div class="showcase-card">
             <img src="{{ url_for('static', filename='poster1.jpg') }}">
-            <h3>Research Poster</h3>
-            <p>Visual summary of a field research project.</p>
+            <div class="showcase-content">
+                <h3>Research Poster</h3>
+                <p>Visual summary of a field research project.</p>
+            </div>
         </div>
 
     </div>
-
 </section>
 
 {% endblock %}

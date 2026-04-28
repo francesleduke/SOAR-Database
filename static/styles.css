@@ -418,120 +418,133 @@ body {
 /* =========================
    FEATURED PROJECTS
 ========================= */
-.featured-projects {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
-.featured-projects h2 {
-    margin-bottom: 1.5rem;
-}
-
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-}
-
 .featured-project {
-    background: white;
-    border-radius: 16px;
+    position: relative;
+    border-radius: 18px;
     overflow: hidden;
-    transition: 0.25s;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
 }
 
+/* Image */
 .featured-project img {
     width: 100%;
-    height: 160px;
+    height: 260px;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Overlay */
+.featured-project .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.2)
+    );
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 1.5rem;
+    opacity: 0;
+    transition: 0.3s;
 }
 
 .featured-project h3 {
-    padding: 1rem 1rem 0.3rem;
+    margin-bottom: 0.3rem;
 }
 
 .featured-project p {
-    padding: 0 1rem 1rem;
-    color: #555;
+    font-size: 0.9rem;
+    opacity: 0.85;
 }
 
-.featured-project a {
+.featured-project span {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--yellow);
+}
+
+/* Hover effects */
+.featured-project:hover img {
+    transform: scale(1.08);
+}
+
+.featured-project:hover .overlay {
+    opacity: 1;
+}
+
+/* SECTION SPACING */
+.featured-projects,
+.research-showcase {
+    margin-top: 4rem;
+}
+
+.featured-projects h2,
+.research-showcase h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* underline accent */
+.featured-projects h2::after,
+.research-showcase h2::after {
+    content: "";
     display: block;
-    padding: 0 1rem 1.2rem;
-    color: var(--orange);
-    font-weight: 500;
-    text-decoration: none;
+    width: 60%;
+    height: 4px;
+    background: var(--orange);
+    margin-top: 0.4rem;
+    border-radius: 2px;
 }
 
-.featured-project:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+.featured-projects,
+.research-showcase {
+    padding: 0 2rem;
 }
 
 /* =========================
    SHOWCASE GRID
 ========================= */
-.research-showcase {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
-.showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-}
-
-/* CARD */
 .showcase-card {
-    background: white;
-    border-radius: 16px;
+    border-radius: 18px;
     overflow: hidden;
-    padding-bottom: 1rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
-/* VIDEO */
-.showcase-card iframe {
-    width: 100%;
-    height: 180px;
-    border: none;
+/* Add subtle border instead of heavy shadow */
+.showcase-card {
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
-/* POSTER IMAGE */
+/* Hover */
+.showcase-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+}
+
+.showcase-card iframe,
 .showcase-card img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
 }
 
-/* PAPER PREVIEW */
-.paper-preview {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    background: var(--yellow);
+/* smoother edges */
+.showcase-card iframe {
+    border: none;
 }
 
-.showcase-card h3 {
-    padding: 1rem 1rem 0.3rem;
-}
-
-.showcase-card p {
-    padding: 0 1rem 0.5rem;
-    color: #555;
-}
-
-.showcase-card a {
-    padding: 0 1rem;
-    color: var(--teal);
-    text-decoration: none;
-    font-weight: 500;
+.featured-grid,
+.showcase-grid {
+    margin-top: 1.5rem;
 }
 
 /* =========================
