@@ -1,32 +1,65 @@
 {% extends "base.html" %}
 
-{% block title %}RAVEN{% endblock %}
+{% block title %}Partner Organizations{% endblock %}
 
 {% block content %}
 
-    <header>
-        <h1>Opportunities</h1>
-        <p>Discover jobs, research positions, and off-campus study programs curated for students.</p>
-    </header>
+<!-- HEADER -->
+<section class="page-header">
+    <h1>Partner Organizations</h1>
+    <p>
+        Students at COA have had long-standing opportunities and relationships with several organizations and institutions. These include:
+    </p>
+</section>
 
-    <main>
-        <a href="/opportunities/job" class="category-card">
-            <img src="{{ url_for('static', filename='jobs.png') }}" alt="Jobs">
-            <h2>Jobs</h2>
-        </a>
-        <a href="/opportunities/research" class="category-card">
-            <img src="{{ url_for('static', filename='research.png') }}" alt="Research">
-            <h2>Research</h2>
-        </a>
-        <a href="/opportunities/off-campus" class="category-card">
-            <img src="{{ url_for('static', filename='offcampus.png') }}" alt="Off-Campus Study">
-            <h2>Off-Campus Study</h2>
-        </a>
-        <a href="/opportunities/internship" class="category-card">
-            <img src="{{ url_for('static', filename='internship.png') }}" alt="Internships">
-            <h2>Internships</h2>
-        </a>
-    </main>
-</body>
-</html>
+<!-- ORGANIZATION GRID -->
+<section class="org-grid">
+
+    <!-- JAX -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='jax.jpg') }}" alt="Jackson Laboratory">
+        <h2>Jackson Laboratory</h2>
+        <p>
+            A leading biomedical research institution offering students hands-on experience in genetics, genomics, and data science.
+        </p>
+    </div>
+
+    <!-- MDI Hospital -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='mdi.jpg') }}" alt="MDI Hospital">
+        <h2>MDI Hospital</h2>
+        <p>
+            A community-based hospital providing opportunities in healthcare, patient services, and clinical support roles.
+        </p>
+    </div>
+
+    <!-- Bigelow -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='bigelow.jpg') }}" alt="Bigelow Laboratory">
+        <h2>Bigelow Laboratory for Ocean Sciences</h2>
+        <p>
+            A world-renowned oceanographic research institute focused on microbial oceanography and global climate systems.
+        </p>
+    </div>
+
+    <!-- Mount Desert Rock -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='mdr.jpg') }}" alt="Mount Desert Rock">
+        <h2>Mount Desert Rock</h2>
+        <p>
+            A remote research station offering immersive fieldwork experiences in marine ecology and seabird conservation.
+        </p>
+    </div>
+
+    <!-- Great Duck Island -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='gdi.jpg') }}" alt="Great Duck Island">
+        <h2>Great Duck Island</h2>
+        <p>
+            A unique field research site where students study seabirds, ecosystems, and long-term environmental changes.
+        </p>
+    </div>
+
+</section>
+
 {% endblock %}
