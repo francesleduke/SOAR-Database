@@ -654,6 +654,84 @@ body {
 }
 
 /* =========================
+   GET INVOLVED PAGE
+========================= */
+
+/* HERO */
+.involve-hero {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+.involve-hero h1 {
+    font-size: 2.5rem;
+}
+
+.involve-hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* MESSAGE */
+.involve-message {
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ACTION BUTTONS */
+.involve-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+/* primary = bold */
+.action-button.primary {
+    background: var(--orange);
+    color: white;
+}
+
+/* secondary = lighter */
+.action-button.secondary {
+    background: var(--teal);
+    color: white;
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* RESOURCES SECTION */
+.involve-resources {
+    text-align: center;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    max-width: 800px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+.involve-resources h2 {
+    margin-bottom: 1rem;
+}
+
+/* =========================
    DIVIDER
 ========================= */
 .section-divider {
