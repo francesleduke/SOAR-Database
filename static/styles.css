@@ -1,5 +1,6 @@
-/* RESET */
-
+/* =========================
+   COLOR SYSTEM
+========================= */
 :root {
     --orange: #FF8243;
     --pink: #FFC0CB;
@@ -9,49 +10,28 @@
     --text-dark: #2c3e50;
     --bg-light: #fffaf7;
 }
+
+/* =========================
+   RESET
+========================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background: linear-gradient(135deg, #fffaf7 0%, #ffe4dc 40%, #fff3c4 100%);
     color: var(--text-dark);
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--orange), transparent 70%);
-    opacity: 0.2;
-    z-index: -1;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    bottom: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--teal), transparent 70%);
-    opacity: 0.08;
-    z-index: -1;
-}
-
-/* FONT STYLING */
-header h1, .nav-left a, .section-card h2 {
-    font-family: 'Montserrat', Arial, sans-serif;
-}
-
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
     background: var(--teal);
     padding: 0 2rem;
@@ -59,6 +39,9 @@ header h1, .nav-left a, .section-card h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    position: relative;   /* ADD THIS */
+    z-index: 1000;        /* ADD THIS */
 }
 
 .nav-left a {
@@ -67,6 +50,22 @@ header h1, .nav-left a, .section-card h2 {
     justify-content: center;
     text-decoration: none;
     color: white;
+}
+
+.logo-main {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav-right a {
@@ -79,61 +78,37 @@ header h1, .nav-left a, .section-card h2 {
     color: var(--yellow);
 }
 
-.logo-main {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.subtitle {
-    font-size: 0.65rem;
-    font-weight: 400;
-    line-height: 1.1;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 2px;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-/* DROPDOWN */
+/* =========================
+   DROPDOWN
+========================= */
 .dropdown {
     position: relative;
-}
-
-.dropdown > a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
 }
 
 .dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
+    background: white;
     min-width: 220px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     opacity: 0;
     transform: translateY(10px);
     pointer-events: none;
-    transition: all 0.25s ease;
-    z-index: 1000;
+    transition: 0.25s;
 }
 
 .dropdown-content a {
     display: block;
     padding: 12px 16px;
-    text-decoration: none;
-    color: #2c3e50;
+    color: var(--text-dark);
+
+    z-index: 2000; /* ADD THIS */
 }
 
 .dropdown-content a:hover {
-    background-color: #f3f5f8;
+    background: #f3f5f8;
 }
 
 .dropdown:hover .dropdown-content {
@@ -142,42 +117,95 @@ header h1, .nav-left a, .section-card h2 {
     pointer-events: auto;
 }
 
-/* HEADER */
-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem;
-    justify-content: center;
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    position: relative;
     text-align: center;
+    padding: 5rem 2rem 3rem;
+    overflow: hidden;
 }
 
-header img {
-    height: 60px;
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
-header h1 {
-    font-size: 2rem;
-}
-
-header p {
-    margin-top: 0.5rem;
+.hero-subtitle {
     font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #555;
 }
 
-/* MAIN */
+.hero-description {
+    margin: 1.5rem auto;
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #444;
+}
 
-main {
+.hero-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--orange);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.hero-button:hover {
+    background: var(--teal);
+}
+
+/* =========================
+   HERO BACKGROUND SHAPES
+========================= */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--pink), transparent 70%);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--yellow), transparent 70%);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* =========================
+   CARDS SECTION
+========================= */
+.cards {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1000px;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    max-width: 1100px;
 }
 
-/* CARDS */
+/* =========================
+   CARD DESIGN
+========================= */
 .section-card {
+    flex: 1 1 250px;
+    max-width: 300px;
     background: white;
     border-radius: 16px;
     padding: 2rem;
@@ -190,48 +218,33 @@ main {
 
 .section-card h2 {
     color: var(--teal);
-}
-
-.section-card {
-    flex: 1 1 250px;
-    max-width: 300px;
-}
-
-.section-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--orange);
-    box-shadow: 0 15px 30px rgba(255, 130, 67, 0.25);
-}
-
-.section-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.section-card h2 {
     margin-bottom: 1rem;
 }
 
-.section-card p {
-    font-size: 1rem;
-    line-height: 1.5;
+.section-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: var(--orange);
+    box-shadow: 0 20px 40px rgba(255, 130, 67, 0.25);
 }
 
-/* DIVIDER */
-hr.section-divider {
+/* =========================
+   DIVIDER
+========================= */
+.section-divider {
     border: 0;
     height: 2px;
-    background: #bdc3c7;
+    background: #ccc;
     margin: 4rem auto;
     width: 60%;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
     text-align: center;
     padding: 2rem;
     font-size: 0.9rem;
     color: #7f8c8d;
     background-color: #ecf0f1;
-    margin-top: 3rem;
 }

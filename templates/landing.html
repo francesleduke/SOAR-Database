@@ -4,34 +4,52 @@
 
 {% block content %}
 
-<header>
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="SOAR Logo">
-    <h1>RAVEN</h1>
-    <p>Research Access, Visibility, and Exploration Network</p>
-</header>
+<!-- HERO SECTION -->
+<section class="hero">
 
-<main>
+    <div class="hero-text">
+        <h1>RAVEN</h1>
+
+        <p class="hero-subtitle">
+            Research Access, Visibility, and Exploration Network
+        </p>
+
+        <p class="hero-description">
+            La la la la put something here that makes sense 
+        </p>
+
+        <a href="/opportunities" class="hero-button">
+            Get Started
+        </a>
+    </div>
+
+</section>
+
+<!-- CARDS SECTION -->
+<section class="cards">
+
     <a href="/opportunities" class="section-card">
         <h2>Research at COA and Beyond</h2>
         <p>
-            Learn about research opportunities for COA students, from established partner organizations to opportunities in your field of interest.
+            Explore opportunities from partner organizations to independent research.
         </p>
     </a>
 
     <a href="/career-guides" class="section-card">
         <h2>Resources and Information</h2>
         <p>
-            What is research? Who can do it? What does research look like in your field? Understand the process and your role in it.
+            Understand what research is and how to get involved.
         </p>
     </a>
 
     <a href="/internships" class="section-card">
         <h2>Internship Archive</h2>
         <p>
-            Check past internships, program locations, and insights to plan your next steps.
+            Browse past internships and plan your next step.
         </p>
     </a>
-</main>
+
+</section>
 
 <hr class="section-divider">
 
