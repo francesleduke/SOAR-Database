@@ -548,6 +548,112 @@ body {
 }
 
 /* =========================
+   HERO
+========================= */
+.beyond-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--pink), var(--yellow));
+    border-radius: 0 0 30px 30px;
+}
+
+.beyond-hero h1 {
+    font-size: 2.5rem;
+}
+
+.beyond-hero p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    color: #444;
+}
+
+/* =========================
+   INFO
+========================= */
+.beyond-info {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+/* =========================
+   STEPS
+========================= */
+.beyond-steps {
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.25s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.step-card span {
+    font-size: 2rem;
+}
+
+.step-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+}
+
+/* =========================
+   RESOURCES
+========================= */
+.external-resources {
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: 0.25s;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.resource-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--teal);
+}
+
+/* =========================
+   CTA
+========================= */
+.beyond-cta {
+    text-align: center;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--pink), var(--yellow));
+    border-radius: 20px;
+    max-width: 800px;
+}
+
+/* =========================
    DIVIDER
 ========================= */
 .section-divider {

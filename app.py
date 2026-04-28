@@ -56,7 +56,7 @@ def jobs():
 
 @app.route("/opportunities/beyond")
 def internships():
-    return render_template("internships.html")
+    return render_template("beyond.html")
 
 @app.route("/opportunities/getinvolved")
 def off_campus():
