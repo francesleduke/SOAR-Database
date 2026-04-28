@@ -732,6 +732,117 @@ body {
 }
 
 /* =========================
+   RESEARCH 101
+========================= */
+
+/* HERO */
+.r101-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--yellow), var(--pink));
+    border-radius: 0 0 30px 30px;
+}
+
+.r101-hero h1 {
+    font-size: 2.5rem;
+}
+
+.r101-hero p {
+    margin-top: 1rem;
+    color: #444;
+}
+
+/* INTRO */
+.r101-intro {
+    max-width: 800px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+/* GRID spacing bigger */
+.fields-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* CARD */
+.field-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* subtle gradient accent */
+.field-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--pink), var(--yellow));
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 0;
+}
+
+/* content above overlay */
+.field-card * {
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.field-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+}
+
+/* DESCRIPTION */
+.field-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.2rem;
+}
+
+/* LINKS */
+.field-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.field-links a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--teal);
+    transition: 0.2s;
+}
+
+.field-links a:hover {
+    color: var(--orange);
+}
+
+/* HOVER EFFECT */
+.field-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--orange);
+}
+
+.field-card:hover::before {
+    opacity: 0.15;
+}
+
+/* =========================
    DIVIDER
 ========================= */
 .section-divider {

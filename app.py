@@ -76,6 +76,10 @@ def internship_map():
 def guides():
     # Placeholder for career community guides page
     return render_template("guides.html")
+@app.route("/guides/research101")
+def research101():
+    return render_template("research101.html")
+
 
 @app.route("/landing")
 def landing():
