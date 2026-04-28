@@ -1,77 +1,104 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>
-        {% if opp_type %}
-            {{ opp_type|capitalize }} Opportunities
-        {% else %}
-            All Opportunities
-        {% endif %}
-    </title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 2rem; 
-            background-color: #f5f5f5; 
-        }
-        nav {
-            margin-bottom: 2rem;
-        }
-        nav a {
-            margin-right: 1rem;
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        h1 { 
-            color: #2c3e50; 
-            margin-bottom: 1.5rem;
-        }
-        .opportunity-list { 
-            list-style-type: none; 
-            padding: 0; 
-        }
-        .opportunity-card {
-            background-color: #fff;
-            margin: 1rem 0;
-            padding: 1.2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .opportunity-card a { 
-            color: #2980b9; 
-            text-decoration: none; 
-        }
-        .opportunity-card a:hover { 
-            text-decoration: underline; 
-        }
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            margin-left: 0.5rem;
-        }
-        .paid { background-color: #2ecc71; color: white; }
-        .unpaid { background-color: #95a5a6; color: white; }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="/landing">Home</a>
-        <a href="/opportunities">All Opportunities</a>
-        <a href="/opportunities/internship">Internships</a>
-        <a href="/opportunities/job">Jobs</a>
-        <a href="/opportunities/research">Research</a>
-    </nav>
+<style>
+/* --- Header Section --- */
+.opportunities-header {
+    text-align: center;
+    margin: 3rem 1rem 2rem 1rem;
+}
 
+.opportunities-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.opportunities-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- Cards Section --- */
+.opportunities-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1rem;
+}
+
+.opportunity-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.opportunity-card h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.opportunity-card .subheader {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.opportunity-card .description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.opportunity-card .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.badge.paid { background-color: #2ecc71; color: white; }
+.badge.unpaid { background-color: #95a5a6; color: white; }
+
+.opportunity-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: auto;
+}
+
+.opportunity-card a:hover {
+    text-decoration: underline;
+}
+
+/* --- Section Divider --- */
+.section-divider {
+    width: 60%;
+    height: 2px;
+    background-color: #bdc3c7;
+    margin: 4rem auto;
+    border: none;
+}
+</style>
+
+<!-- --- Header --- -->
+<section class="opportunities-header">
     <h1>
         {% if opp_type %}
             {{ opp_type|capitalize }} Opportunities
@@ -79,29 +106,43 @@
             All Opportunities
         {% endif %}
     </h1>
+    <p>
+        {% if opp_type %}
+            Browse curated {{ opp_type|lower }} opportunities for students in research, jobs, internships, and off-campus study programs.
+        {% else %}
+            Browse all curated opportunities for students in research, jobs, internships, and off-campus study programs.
+        {% endif %}
+    </p>
+</section>
 
+<hr class="section-divider">
+
+<!-- --- Cards --- -->
+<section class="opportunities-cards">
     {% if opportunities %}
-        <ul class="opportunity-list">
-            {% for opp in opportunities %}
-                <li class="opportunity-card">
-                    <strong>{{ opp.title }}</strong>
-                    {% if opp.paid %}
-                        <span class="badge paid">Paid</span>
-                    {% else %}
-                        <span class="badge unpaid">Unpaid</span>
-                    {% endif %}
-                    <br>
-                    ({{ opp.opportunity_type }} in {{ opp.field }})<br>
-                    {% if opp.institution %}{{ opp.institution }}{% endif %}
-                    {% if opp.location %} — {{ opp.location }}{% endif %}<br>
-                    {% if opp.link %}<a href="{{ opp.link }}" target="_blank">More info</a>{% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No opportunities found.</p>
-    {% endif %}
-</body>
-</html>
+        {% for opp in opportunities %}
+        <div class="opportunity-card">
+            <h2>{{ opp.Name }}</h2>
+            <div class="subheader">{{ opp.opportunity_type }} in {{ opp.field }}</div>
+            
+            {% if opp.paid %}
+                <span class="badge paid">Paid</span>
+            {% else %}
+                <span class="badge unpaid">Unpaid</span>
+            {% endif %}
+            
+            <div class="description">
+                {% if opp.institution %}{{ opp.institution }}{% endif %}
+                {% if opp.location %} — {{ opp.location }}{% endif %}
+            </div>
 
+            {% if opp.link %}
+                <a href="{{ opp.link }}" target="_blank">More info →</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center; color:#555;">No opportunities found.</p>
+    {% endif %}
+</section>
 {% endblock %}

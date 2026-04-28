@@ -3,7 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>{% block title %}SOAR{% endblock %}</title>
+    <title>{% block title %}RAVEN{% endblock %}</title>
 
     <style>
         * {
@@ -18,10 +18,9 @@
             color: #2c3e50;
         }
 
-        /* Logo, titles, nav links */
-header h1, .nav-left a, .section-card h2 {
-    font-family: 'Montserrat', Arial, sans-serif;
-}
+        header h1, .nav-left a, .section-card h2 {
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
 
         /* NAVBAR */
         .navbar {
@@ -36,11 +35,20 @@ header h1, .nav-left a, .section-card h2 {
         .nav-left {
             font-size: 1.6rem;
             font-weight: bold;
+            line-height: 1.1;
         }
 
         .nav-left a {
             color: white;
             text-decoration: none;
+        }
+
+        .subtitle {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 400;
+            line-height: 1.1;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .nav-right {
@@ -49,7 +57,6 @@ header h1, .nav-left a, .section-card h2 {
             gap: 2rem;
         }
 
-        /* Dropdown */
         .dropdown {
             position: relative;
         }
@@ -80,7 +87,6 @@ header h1, .nav-left a, .section-card h2 {
             padding: 12px 16px;
             text-decoration: none;
             color: #2c3e50;
-            font-weight: normal;
         }
 
         .dropdown-content a:hover {
@@ -94,29 +100,30 @@ header h1, .nav-left a, .section-card h2 {
         }
 
         .external-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 500; /* same as dropdown links */
-    transition: opacity 0.2s;
-}
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-.external-link:hover {
-    opacity: 0.8;
-}
-        /* Logo + Title */
+        .external-link:hover {
+            opacity: 0.8;
+        }
+
+        /* HEADER */
         header {
             display: flex;
             align-items: center;
             gap: 1rem;
             padding: 2rem;
             justify-content: center;
+            text-align: center;
         }
 
         header img {
             height: 60px;
         }
 
-       header h1 {
+        header h1 {
             font-size: 2rem;
         }
 
@@ -125,26 +132,25 @@ header h1, .nav-left a, .section-card h2 {
             font-size: 1.2rem;
         }
 
-        /* Main section with cards */
+        /* MAIN CONTENT */
         main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             margin: 2rem auto;
             max-width: 1000px;
-            gap: 2rem;
+            padding: 0 1rem;
         }
 
+        /* CARDS (optional reuse) */
         .section-card {
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             padding: 2rem;
             text-align: center;
-            flex: 1 1 250px;
             transition: transform 0.2s, box-shadow 0.2s;
             text-decoration: none;
             color: #2c3e50;
+            display: block;
+            margin-bottom: 2rem;
         }
 
         .section-card:hover {
@@ -153,71 +159,55 @@ header h1, .nav-left a, .section-card h2 {
         }
 
         .section-card h2 {
-            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .section-card p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* Separators */
-        hr.section-divider {
-            border: 0;
-            height: 2px;
-            background: #bdc3c7;
-            margin: 4rem 0;
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
             color: #7f8c8d;
             background-color: #ecf0f1;
+            margin-top: 3rem;
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Navbar -->
- <nav class="navbar">
-
-    <!-- LEFT SIDE -->
+<nav class="navbar">
     <div class="nav-left">
-        <a href="/">SOAR</a>
+        <a href="/">
+            RAVEN
+            <span class="subtitle">
+                Research Access, Visibility, and Exploration Network
+            </span>
+        </a>
     </div>
 
-    <!-- RIGHT SIDE -->
     <div class="nav-right">
-
-        <!-- Opportunities -->
         <div class="dropdown">
-            <a href="#">Opportunities</a>
+            <a href="#">Research at COA and Beyond</a>
             <div class="dropdown-content">
-                <a href="/opportunities/landing">Find Opportunities</a>
-                <a href="/opportunities/research">Research</a>
-                <a href="/opportunities/job">Jobs</a>
-                <a href="/opportunities/internship">Internships</a>
-                <a href="/opportunities/off-campus">Off Campus Study</a>
+                <a href="/opportunities/landing">Partner Organizations</a>
+                <a href="/opportunities/research">Faculty Research</a>
+                <a href="/opportunities/job">Student Research</a>
+                <a href="/opportunities/internship">Beyond COA</a>
+                <a href="/opportunities/off-campus">Get Involved</a>
             </div>
         </div>
 
-        <!-- Resources & Exploration -->
         <div class="dropdown">
-            <a href="#">Resources & Exploration</a>
+            <a href="#">Resources & Information</a>
             <div class="dropdown-content">
-                <a href="#">Placeholder 1</a>
-                <a href="#">Placeholder 2</a>
+                <a href="#">Research 101</a>
+                <a href="#">You Belong in Research</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Visibility</a>
+                <a href="#">Resources</a>
             </div>
         </div>
 
-        <!-- Internship Archive -->
         <div class="dropdown">
             <a href="#">Internship Archive</a>
             <div class="dropdown-content">
@@ -226,16 +216,10 @@ header h1, .nav-left a, .section-card h2 {
                 <a href="/internships/list">Archive List</a>
             </div>
         </div>
-
-        <!-- Career Development External -->
-        <a class="external-link" href="https://www.coa.edu/academics/internships/" target="_blank">
-            Career Development
-        </a>
-
     </div>
 </nav>
 
-
+<!-- PAGE CONTENT GOES HERE -->
 <main>
     {% block content %}{% endblock %}
 </main>

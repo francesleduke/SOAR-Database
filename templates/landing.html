@@ -1,294 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>SOAR - Student Opportunities</title>
-    <style>
-        /* Reset some defaults */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+{% extends "base.html" %}
 
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(180deg, #f5f7fa 0%, #e9edf3 100%);
-            color: #2c3e50;
-        }
+{% block title %}RAVEN{% endblock %}
 
-        /* Logo, titles, nav links */
-header h1, .nav-left a, .section-card h2 {
-    font-family: 'Montserrat', Arial, sans-serif;
-}
+{% block content %}
 
-        /* NAVBAR */
-        .navbar {
-            background-color: #2c3e50;
-            padding: 0 2rem;
-            height: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+<header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="SOAR Logo">
+    <h1>RAVEN</h1>
+    <p>Research Access, Visibility, and Exploration Network</p>
+</header>
 
-        .nav-left {
-            font-size: 1.6rem;
-            font-weight: bold;
-        }
-
-        .nav-left a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown > a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 220px;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            opacity: 0;
-            transform: translateY(10px);
-            pointer-events: none;
-            transition: all 0.25s ease;
-            z-index: 1000;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: normal;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f3f5f8;
-        }
-
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .external-link {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .external-link:hover {
-            opacity: 0.8;
-        }
-
-        /* Logo + Title */
-        header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 2rem;
-            justify-content: center;
-        }
-
-        header img {
-            height: 60px;
-        }
-
-       header h1 {
-            font-size: 2rem;
-        }
-
-        header p {
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Main section with cards */
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 2rem auto;
-            max-width: 1000px;
-            gap: 2rem;
-        }
-
-        .section-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            padding: 2rem;
-            text-align: center;
-            flex: 1 1 250px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: #2c3e50;
-        }
-
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .section-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-card p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* Separators */
-        hr.section-divider {
-            border: 0;
-            height: 2px;
-            background: #bdc3c7;
-            margin: 4rem 0;
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            background-color: #ecf0f1;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navbar -->
- <nav class="navbar">
-
-    <!-- LEFT SIDE -->
-    <div class="nav-left">
-        <a href="/">SOAR</a>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="nav-right">
-
-        <!-- Opportunities -->
-        <div class="dropdown">
-            <a href="#">Opportunities</a>
-            <div class="dropdown-content">
-                <a href="/opportunities/landing">Find Opportunities</a>
-                <a href="/opportunities/research">Research</a>
-                <a href="/opportunities/job">Jobs</a>
-                <a href="/opportunities/internship">Internships</a>
-                <a href="/opportunities/off-campus">Off Campus Study</a>
-            </div>
-        </div>
-
-        <!-- Resources & Exploration -->
-        <div class="dropdown">
-            <a href="#">Resources & Exploration</a>
-            <div class="dropdown-content">
-                <a href="#">Placeholder 1</a>
-                <a href="#">Placeholder 2</a>
-            </div>
-        </div>
-
-        <!-- Internship Archive -->
-        <div class="dropdown">
-            <a href="#">Internship Archive</a>
-            <div class="dropdown-content">
-                <a href="/internships/landing">Internship Archive</a>
-                <a href="/internships/map">Map</a>
-                <a href="/internships/list">Archive List</a>
-            </div>
-        </div>
-
-        <!-- Career Development External -->
-        <a class="external-link" href="https://www.coa.edu/academics/internships/" target="_blank">
-            Career Development
-        </a>
-
-    </div>
-</nav>
-
-    <!-- Header with logo -->
-    <header>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="SOAR Logo">
-        <h1>SOAR Database</h1>
-        <p>Centralized undergraduate research, internships, and career resources for students</p>
-    </header>
-
-    <!-- Main cards -->
-    <main>
+<main>
     <a href="/opportunities" class="section-card">
-        <h2>Explore Opportunities</h2>
-        <p>View current internships, jobs, and research opportunities curated for students.</p>
+        <h2>Research at COA and Beyond</h2>
+        <p>
+            Learn about research opportunities for COA students, from established partner organizations to opportunities in your field of interest.
+        </p>
     </a>
 
     <a href="/career-guides" class="section-card">
-        <h2>Resources and Exploration</h2>
-        <p>Explore guides, career communities, and tools to navigate your professional path.</p>
+        <h2>Resources and Information</h2>
+        <p>
+            What is research? Who can do it? What does research look like in your field? Understand the process and your role in it.
+        </p>
     </a>
 
     <a href="/internships" class="section-card">
         <h2>Internship Archive</h2>
-        <p>Check past internships, program locations, and insights to plan your next steps.</p>
+        <p>
+            Check past internships, program locations, and insights to plan your next steps.
+        </p>
     </a>
-    </main>
+</main>
 
-    <hr class="section-divider">
+<hr class="section-divider">
 
-    <section style="max-width: 1000px; margin: 0 auto 4rem auto; padding: 0 2rem;">
-        <h2 style="margin-bottom: 2rem;">Upcoming Events</h2>
-
-        {% for event in events %}
-        <div style="
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        ">
-            <h3 style="margin-bottom: 0.5rem;">{{ event.event_title }}</h3>
-            <p style="margin-bottom: 0.5rem;"><strong>Date:</strong> {{ event.event_date }}</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> {{ event.location }}</p>
-            <p style="margin-bottom: 1rem;">{{ event.description }}</p>
-
-            {% if event.link %}
-            <a href="{{ event.link }}" target="_blank" style="color: #2c3e50; font-weight: bold;">
-                Learn More →
-            </a>
-            {% endif %}
-        </div>
-        {% endfor %}
-    </section>
-
-    <footer>
-        &copy; 2026 SOAR Database | Frances LeDuke
-    </footer>
-
-</body>
-</html>
+{% endblock %}
