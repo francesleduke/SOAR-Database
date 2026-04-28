@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Faculty Research{% endblock %}
+
+{% block content %}
+
+<!-- HERO HEADER -->
+<section class="research-hero">
+    <h1>Faculty Research</h1>
+    <p>
+        Explore research led by faculty across disciplines. Learn about ongoing projects,
+        areas of focus, and opportunities to get involved.
+    </p>
+</section>
+
+<!-- FACULTY GRID -->
+<section class="faculty-grid">
+
+    <div class="faculty-card">
+        <img src="{{ url_for('static', filename='faculty1.jpg') }}">
+        <h2>Dr. Jane Smith</h2>
+        <p class="field">Marine Ecology</p>
+        <p>
+            Studies coastal ecosystems and the impacts of climate change on marine biodiversity.
+        </p>
+    </div>
+
+    <div class="faculty-card">
+        <img src="{{ url_for('static', filename='faculty2.jpg') }}">
+        <h2>Dr. Alex Chen</h2>
+        <p class="field">Genetics & Genomics</p>
+        <p>
+            Focuses on gene expression and disease modeling using advanced sequencing techniques.
+        </p>
+    </div>
+
+    <div class="faculty-card">
+        <img src="{{ url_for('static', filename='faculty3.jpg') }}">
+        <h2>Dr. Maya Patel</h2>
+        <p class="field">Environmental Policy</p>
+        <p>
+            Researches sustainability policy and climate adaptation strategies.
+        </p>
+    </div>
+
+    <div class="faculty-card">
+        <img src="{{ url_for('static', filename='faculty4.jpg') }}">
+        <h2>Dr. Liam O’Connor</h2>
+        <p class="field">Data Science</p>
+        <p>
+            Applies machine learning to ecological and social datasets.
+        </p>
+    </div>
+
+</section>
+
+{% endblock %}

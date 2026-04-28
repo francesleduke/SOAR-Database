@@ -45,10 +45,22 @@ def root():
 @app.route("/opportunities/landing")
 def opportunities_landing():
     return render_template("opportunities_landing.html")
-@app.route("/opportunities/<opp_type>")
-def opportunities(opp_type=None):
-    opportunities_list = read_opportunities(opp_type)
-    return render_template("home.html", opportunities=opportunities_list, opp_type=opp_type)
+
+@app.route("/opportunities/research")
+def faculty_research():
+    return render_template("faculty_research.html")
+
+@app.route("/opportunities/student")
+def jobs():
+    return render_template("student.html")
+
+@app.route("/opportunities/beyond")
+def internships():
+    return render_template("internships.html")
+
+@app.route("/opportunities/getinvolved")
+def off_campus():
+    return render_template("getinvolved.html")
 
 @app.route("/internships")
 @app.route("/internships/landing")
