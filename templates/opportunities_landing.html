@@ -6,6 +6,48 @@
 
 <!-- HEADER -->
 <section class="page-header">
+    <h1>Research at COA</h1>
+    <p>
+        COA has a number of opportunities for students within the institution, mostly centered around marine science and ecology, including the Islands Program and Allied Whale. 
+    </p>
+</section>
+
+<!-- ORGANIZATION GRID -->
+<section class="org-grid">
+
+    <!-- Allied Whale -->
+    <a href="https://www.coa.edu/academics/allied-whale/" target="_blank" class="card-link">
+        <div class="org-card">
+            <img src="{{ url_for('static', filename='AW.png') }}" alt="Allied Whale">
+            <h2>Allied Whale</h2>
+            <p>
+            A research initiative focused on marine mammal conservation and the study of whale behavior and migration patterns.
+            </p>
+            </div>
+    </a>
+
+    <!-- Mount Desert Rock -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='MDR.png') }}" alt="Mount Desert Rock">
+        <h2>Mount Desert Rock</h2>
+        <p>
+            A remote research station offering immersive fieldwork experiences in marine ecology and seabird conservation.
+        </p>
+    </div>
+
+    <!-- Great Duck Island -->
+    <div class="org-card">
+        <img src="{{ url_for('static', filename='GDI.png') }}" alt="Great Duck Island">
+        <h2>Great Duck Island</h2>
+        <p>
+            A unique field research site where students study seabirds, ecosystems, and long-term environmental changes.
+        </p>
+    </div>
+
+</section>
+
+<!-- HEADER -->
+<section class="page-header">
     <h1>Partner Organizations</h1>
     <p>
         Students at COA have had long-standing opportunities and relationships with several organizations and institutions. These include:
@@ -41,25 +83,5 @@
             A world-renowned oceanographic research institute focused on microbial oceanography and global climate systems.
         </p>
     </div>
-
-    <!-- Mount Desert Rock -->
-    <div class="org-card">
-        <img src="{{ url_for('static', filename='MDR.png') }}" alt="Mount Desert Rock">
-        <h2>Mount Desert Rock</h2>
-        <p>
-            A remote research station offering immersive fieldwork experiences in marine ecology and seabird conservation.
-        </p>
-    </div>
-
-    <!-- Great Duck Island -->
-    <div class="org-card">
-        <img src="{{ url_for('static', filename='GDI.png') }}" alt="Great Duck Island">
-        <h2>Great Duck Island</h2>
-        <p>
-            A unique field research site where students study seabirds, ecosystems, and long-term environmental changes.
-        </p>
-    </div>
-
-</section>
 
 {% endblock %}
