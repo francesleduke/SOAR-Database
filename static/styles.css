@@ -233,6 +233,30 @@ h1, h2, h3, .logo-main {
 }
 
 /* =========================
+   HERO GALLERY (LANDING PAGE)
+========================= */
+.hero-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+.hero-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+
+.hero-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
    CARDS SECTION
 ========================= */
 .cards {
