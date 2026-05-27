@@ -24,10 +24,15 @@
    BODY
 ========================= */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #fffaf7 0%, #ffe4dc 40%, #fff3c4 100%);
     color: var(--text-dark);
 }
+
+h1, h2, h3, .logo-main {
+    font-family: 'Lora', serif;
+}
+
 
 /* =========================
    NAVBAR
