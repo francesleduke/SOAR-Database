@@ -725,6 +725,18 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     border-color: var(--orange);
 }
 
+.step-card-button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--teal);
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
 /* =========================
    RESOURCES
 ========================= */
@@ -973,7 +985,7 @@ main {
    DIVIDER
 ========================= */
 .section-divider {
-    border: 0;
+    border: 0; 
     height: 2px;
     background: #ccc;
     margin: 4rem auto;
