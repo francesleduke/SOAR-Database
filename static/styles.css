@@ -271,6 +271,13 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     font-size: 0.90rem;
 }
 
+.hero-text-landing-body2 {
+    max-width:630px;
+    margin:0 auto;
+    padding: 0rem 2rem 1.0rem;
+    font-size: 0.90rem;
+}
+
 /* =========================
    HERO GALLERY (LANDING PAGE)
 ========================= */
@@ -314,7 +321,8 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
 ========================= */
 .section-card {
     flex: 1 1 250px;
-    max-width: 300px;
+    max-width: 400px;
+    min-height: 250px;
     background: white;
     border-radius: 16px;
     padding: 2rem;
