@@ -29,7 +29,7 @@ body {
     color: var(--text-dark);
 }
 
-h1, h2, h3, .logo-main {
+h1, h2, h3, .logo-main, .dropdown-content {
     font-family: 'Lora', serif;
 }
 
@@ -233,7 +233,7 @@ h1, h2, h3, .logo-main {
 }
 
 .hero-text {
-    max-width:500px;
+    max-width:580px;
     margin:0 auto;
     padding: 1rem 2rem 3rem;
 }
@@ -263,6 +263,7 @@ h1, h2, h3, .logo-main {
     padding:0 2rem 0.75rem;
     font-size: 1.05rem;
 }
+
 
 /* =========================
    HERO GALLERY (LANDING PAGE)
