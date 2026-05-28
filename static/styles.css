@@ -255,6 +255,7 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     margin:0 auto;
     padding:0 2rem 0.5rem;
     font-size: 1.5rem;
+    color: var(--teal);
 }
 
 .hero-text-landing-subheader {
