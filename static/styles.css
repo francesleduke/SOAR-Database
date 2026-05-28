@@ -669,20 +669,34 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
 
 
 /* =========================
-   INFO
+   BEYOND INFO
 ========================= */
 .beyond-info {
     max-width: 800px;
     margin: 3rem auto;
-    padding: 0 2rem;
+    padding: 2rem, 2rem, 2rem;
     text-align: center;
+}
+
+.beyond-info-header {
+    max-width:850px;
+    margin:0 auto;
+    padding:0 2rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+.beyond-info-body {
+    max-width:620px;
+    margin:0 auto;
+    padding: 1rem 2rem 0.5rem;
+    font-size: 0.90rem;
 }
 
 /* =========================
    STEPS
 ========================= */
 .beyond-steps {
-    margin: 4rem auto;
+    margin: 2rem auto;
     padding: 0 2rem;
 }
 
