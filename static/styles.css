@@ -29,7 +29,7 @@ body {
     color: var(--text-dark);
 }
 
-h1, h2, h3, .logo-main, .dropdown-content {
+h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     font-family: 'Lora', serif;
 }
 
