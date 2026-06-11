@@ -4,21 +4,63 @@
 
 {% block content %}
 
-    <header>
-        <h1>Internship Archive</h1>
-        <p>Explore past internships, program locations, and resources for planning your next steps.</p>
-    </header>
+<!-- HEADER -->
+<section class="hero-banner">
+    <h1>What does it mean to do research in Human Ecology?</h1>
+    <p>
+    Doing research in human ecology means studying the complex, interconnected relationships between human beings and their environments. It investigates how our social, natural, and built surroundings impact our well-being, and how our daily behaviors—like resource use and design choices—affect those environments in return
+    </p>
+</section>
 
-    <main>
-        <a href="/internships/map" class="archive-card">
-            <img src="{{ url_for('static', filename='map_tile.png') }}" alt="Archive Map">
-            <h2>Archive Map</h2>
-        </a>
-        <a href="/internships/list" class="archive-card">
-            <img src="{{ url_for('static', filename='list_tile.png') }}" alt="Archive List">
-            <h2>Archive List</h2>
-        </a>
-    </main>
-</body>
-</html>
+<!-- ORGANIZATION GRID -->
+<section class="org-grid">
+
+    <!-- Climate Resilience & Sustainable Agriculture -->
+    <a href="https://link.springer.com/article/10.1007/s10460-025-10805-1?" target="_blank" class="card-link">
+        <div class="org-card">
+            <img src="{{ url_for('static', filename='CFA.png') }}" alt="Climate Resilience & Sustainable Agriculture">
+            <h2> <i>When the university meets the grassroots: participatory action research and just transitions in agriculture </i></h2>
+            <p>
+                Climate Resilience & Sustainable Agriculture
+            </p>
+            <p>
+            A participatory research project in the U.S. Midwest studying transitions toward sustainable agriculture with farmers and community organizers.
+            </p>
+        </div>
+    </a>
+
+ <!-- Human Health, Ecology, and Built Environments -->
+    
+    <a href="https://digital.lib.washington.edu/researchworks/items/5335c14e-a5c6-49a2-8570-376bf177112b?" target="_blank" class="card-link">
+        <div class="org-card">
+            <img src="{{ url_for('static', filename='washington.png') }}" alt="Human Health, Ecology & Built Environments">
+            <h2><i>TDAR Gardens Intervention in the Peruvian Amazon</i></h2>
+            <p>
+                Human Health, Ecology & Built Environments
+            </p>
+            <p>
+            Combined ecology, public health, and urban design to improve living conditions in an informal settlement through community garden interventions.
+            </p>
+        </div>
+    </a>
+
+    <!-- Urban Agriculure Policy and Food Security -->
+    
+    <a href="https://asu.elsevierpure.com/en/publications/scaling-up-urban-agriculture-in-tempe-arizona-a-participatory-pla/?" target="_blank" class="card-link">
+        <div class="org-card">
+            <img src="{{ url_for('static', filename='ASU.png') }}" alt="Urban Agriculture Policy and Food Security">
+            <h2><i>Scaling up urban agriculture in Tempe, Arizona: A participatory planning case for early urban food policy</i></h2>
+            <p>
+                Urban Agriculture Policy and Food Security
+            </p>
+            <p>
+               Researchers worked with residents, nonprofits, and city staff to co-design urban food policy recommendations. 
+            </p>
+        </div>
+    </a>
+    </div>
+
+</section>   
+
+
 {% endblock %}
