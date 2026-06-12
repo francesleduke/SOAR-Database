@@ -457,7 +457,23 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     background: var(--teal);
 }
 
-.global-cta-button2 {
+
+/* =========================
+   BANNER CTA
+========================= */
+.banner-cta {
+    margin: 4rem auto 4rem;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--pink), var(--yellow));
+}
+
+.banner-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.banner-cta-button {
     display: inline-block;
     padding: 0.7rem 1.5rem;
     background: var(--teal);
@@ -468,9 +484,10 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     transition: 0.2s;
 }
 
-.global-cta-button2:hover {
+.banner-cta-button:hover {
     background: var(--orange);
 }
+
 
 /* =========================
    FACULTY GRID
