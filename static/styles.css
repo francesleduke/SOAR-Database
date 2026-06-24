@@ -425,9 +425,9 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
 }
 
 .org-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.03);
     border-color: var(--orange);
-    box-shadow: 0 15px 30px rgba(255, 130, 67, 0.25);
+    box-shadow: 0 20px 40px rgba(255, 130, 67, 0.25);
 }
 
 
