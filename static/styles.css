@@ -1029,8 +1029,12 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-    align-items: start; /* cards don't stretch to match tallest — each is its own height */
+    align-items: stretch; /* cards don't stretch to match tallest — each is its own height */
   }
+
+  .r101-card {
+    height: 100%;
+}
 
   /* ── Card link wrapper ── */
   .r101-card-link {
@@ -1155,11 +1159,11 @@ main {
 
   /* ── Responsive ── */
   @media (max-width: 640px) {
-    .org-grid {
+    .r101org-grid {
       grid-template-columns: 1fr;
     }
 
-    .org-card {
+    .r101org-card {
       padding: 1.4rem;
     }
   }
