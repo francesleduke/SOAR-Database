@@ -1,71 +1,102 @@
 {% extends "base.html" %}
-
 {% block title %}Research 101{% endblock %}
-
 {% block content %}
 
 <!-- HERO -->
 <section class="hero-banner">
-    <h1>Research 101</h1>
-    <p>
-        Curious about what research is, how it works, and what it entails? This page is your starting point for understanding the basics of research. 
-    </p>
+  <h1>Research 101</h1>
+  <p>
+    Curious about what research is, how it works, and what it entails?
+    This page is your starting point for understanding the basics of research.
+  </p>
 </section>
 
 <!-- ORGANIZATION GRID -->
-<section class="org-grid">
+<section class="r101-section">
+  <div class="org-grid">
 
-    <!-- Definition, Purpose, Types -->
-    <a href="https://nursing.duke.edu/pfr/research#box1" target="_blank" class="card-link">
-        <div class="org-card">
-            <h2>What is Research?</h2>
-            <p>
-                Research is a process of asking and testing questions about the world around us. Research is a broad term that encompasses
-                many different types of projects, purposes, and methods. Research can be conducted in any field of study, 
-                from the sciences to the arts, and can take many forms, including experiments, surveys, interviews, and literature reviews.
-            </p>
-        </div>
+    <!-- Card 1 -->
+    <a href="https://nursing.duke.edu/pfr/research#box1" target="_blank" rel="noopener noreferrer" class="card-link">
+      <div class="org-card">
+        <div class="card-eyebrow">The Basics</div>
+        <h2>What is Research?</h2>
+        <p>
+          Research is a process of asking and testing questions about the world around us.
+          It encompasses many different types of projects, purposes, and methods — and can
+          be conducted in any field, from the sciences to the arts.
+        </p>
+        <span class="card-cta">Learn more →</span>
+      </div>
     </a>
 
-    <a href="https://nursing.duke.edu/pfr/research#box1" target="_blank" class="card-link">
-        <div class="org-card">
-            <h2>Why Does It Matter?</h2>
-            <p>
-                Research helps answer questions that impact people's lives. Answers researchers find help shape and inform policies, 
-                products, treatments, public programs, and much more. Community plays a central role in research - when people share their needs and experiences
-                with researchers, they help ensure that research is relevant and meaningful to the communities it aims to serve.
-            </p>
-        </div>
+    <!-- Card 2 -->
+    <a href="https://nursing.duke.edu/pfr/research#box1" target="_blank" rel="noopener noreferrer" class="card-link">
+      <div class="org-card">
+        <div class="card-eyebrow">Purpose</div>
+        <h2>Why Does It Matter?</h2>
+        <p>
+          Research helps answer questions that impact people's lives. The answers
+          researchers find shape policies, products, treatments, and public programs.
+          Community voice is central — when people share their needs, research becomes
+          more relevant to the people it aims to serve.
+        </p>
+        <span class="card-cta">Learn more →</span>
+      </div>
     </a>
 
-    <a href="https://nursing.duke.edu/pfr/research#box1" target="_blank" class="card-link">
-        <div class="org-card">
-            <h2>What are the basic steps?</h2>
-            <p>
-                1. Identify a question: What problem or gap in knowledge needs to be addressed?
-                2. Review existing research: What has already been studied and what has been found?
-                3. Form a hypothesis or objective: What do you expect to find or what do you want to learn?
-                4. Design the study: Decide how you'll collect information (data) to test your hypothesis or answer your question.
-                5. Collect data: Gather information through experiments, surveys, interviews, or other methods
-                6. Analyze and communicate results: Interpret the data and share your findings with others.
-            </p>
-        </div>
-    </a>    
+    <!-- Card 3 — Steps as a list -->
+    <a href="https://nursing.duke.edu/pfr/research#box2" target="_blank" rel="noopener noreferrer" class="card-link">
+      <div class="org-card org-card--steps">
+        <div class="card-eyebrow">Process</div>
+        <h2>What are the Basic Steps?</h2>
+        <ol class="steps-list">
+          <li>
+            <strong>Identify a question</strong>
+            <span>What problem or gap in knowledge needs to be addressed?</span>
+          </li>
+          <li>
+            <strong>Review existing research</strong>
+            <span>What has already been studied and what has been found?</span>
+          </li>
+          <li>
+            <strong>Form a hypothesis</strong>
+            <span>What do you expect to find, or what do you want to learn?</span>
+          </li>
+          <li>
+            <strong>Design the study</strong>
+            <span>Decide how you'll collect information to test your hypothesis.</span>
+          </li>
+          <li>
+            <strong>Collect data</strong>
+            <span>Gather information through experiments, surveys, interviews, or other methods.</span>
+          </li>
+          <li>
+            <strong>Analyze and share</strong>
+            <span>Interpret the data and communicate your findings with others.</span>
+          </li>
+        </ol>
+        <span class="card-cta">Learn more →</span>
+      </div>
+    </a>
 
+    <!-- ADD MORE CARDS HERE — just copy a card block above -->
+
+  </div>
+</section>
 
 <hr class="section-divider">
 
 <!-- CTA -->
 <section class="r101-cta">
-    <h2>You Belong in Research</h2>
-    <p>
-        There’s no single path into research. If you’re curious, thoughtful,
-        or creative—you already have what it takes to start.
-    </p>
-
-    <a href="/get-involved" class="cta-button">
-        Get Involved →
-    </a>
+  <h2>You Belong in Research</h2>
+  <p>
+    There's no single path into research. If you're curious, thoughtful,
+    or creative — you already have what it takes to start.
+  </p>
+  <a href="/get-involved" class="cta-button">
+    Get Involved →
+  </a>
 </section>
+
 
 {% endblock %}
