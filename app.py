@@ -79,8 +79,7 @@ def guides():
 @app.route("/guides/research101")
 def research101():
     return render_template("research101.html")
-
-@app.route("/accessvisibility")
+@app.route("/guides/accessvisibility")
 def accessvisibility():
     return render_template("accessvisibility.html")
 
