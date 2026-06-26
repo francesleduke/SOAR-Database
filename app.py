@@ -80,6 +80,10 @@ def guides():
 def research101():
     return render_template("research101.html")
 
+@app.route("/accessvisibility")
+def accessvisibility():
+    return render_template("accessvisibility.html")
+
 
 @app.route("/landing")
 def landing():
