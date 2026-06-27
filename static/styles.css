@@ -9,6 +9,7 @@
 
     --text-dark: #2c3e50;
     --bg-light: #fffaf7;
+    --blue:   #4a6fa5;
 }
 
 /* =========================
@@ -978,7 +979,7 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
-    color: var(--teal);
+    color: var(--blue);
     transition: 0.2s;
 }
 
@@ -1051,7 +1052,7 @@ main {
   .r101-card-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: block; 
     border-radius: 12px;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
