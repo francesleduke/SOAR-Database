@@ -979,7 +979,7 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
-    color: var(--blue);
+    color: var(--teal);
     transition: 0.2s;
 }
 
