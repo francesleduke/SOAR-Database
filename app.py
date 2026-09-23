@@ -66,11 +66,19 @@ def off_campus():
 @app.route("/internships/landing")
 def internship_landing():
     return render_template("internship_landing.html")
-@app.route("/internships/map")
+@app.route("/internships/research_across")
+def research_across():
+    return render_template("research_across.html")
+
+@app.route("/internships/map") # DELETE THIS ROUTE LATER
 def internship_map():
     # Only show internships from the sheet
     internships = read_opportunities("internship")
-    return render_template("internships.html", opportunities=internships)
+    return render_template("internships.html", opportunities=internships) 
+
+
+
+
 
 @app.route("/guides")
 def guides():
