@@ -58,6 +58,13 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
     color: white;
 }
 
+.nav-logo {
+    width: 45px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
 .logo-main {
     font-size: 1.6rem;
     font-weight: 700;
