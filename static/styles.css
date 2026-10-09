@@ -62,7 +62,7 @@ h1, h2, h3, .logo-main, .dropdown-content, .navbar {
 .logo-row {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .nav-logo {
