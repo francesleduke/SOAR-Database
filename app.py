@@ -90,6 +90,9 @@ def research101():
 @app.route("/guides/access")
 def accessvisibility():
     return render_template("access.html")
+@app.route("/guides/resources")
+def resources():
+    return render_template("resources.html")
 
 
 @app.route("/landing")
